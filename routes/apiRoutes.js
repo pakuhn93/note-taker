@@ -2,12 +2,11 @@
 const router = require('express').Router();
 const db = require('../db/db');
 
-// Endpoint: /api/notes will be used for the following routes
-
+// Endpoint: /api/notes will be used for the following routes ...
 // get all notes from our database
 router.get('/notes', (req, res) => {
     db 
-        .getData()
+        .getNotes()
         .then((data) => {
             return res.json(data)
         })
@@ -19,7 +18,7 @@ router.get('/notes', (req, res) => {
 router.post('/notes', (req,res) => {
     // remember req.body when posting
     db
-        .addData(req.body)
+        .addNote(req.body)
         .then((data) => res.json(data))
         .catch((err) => res.status(500).json(err));
 });

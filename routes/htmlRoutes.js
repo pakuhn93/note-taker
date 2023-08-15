@@ -5,7 +5,7 @@ const router = require('express').Router();
 // Endpoint: /notes
 // sends the right file to be displayed when the endpoint is /notes
 router.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/notes,html'));
+    res.sendFile(path.join(__dirname, '../public/notes.html'));
 });
 
 
